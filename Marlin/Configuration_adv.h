@@ -710,7 +710,7 @@
 #define CHAMBER_AUTO_FAN_PIN -1
 #define COOLER_AUTO_FAN_PIN -1
 
-#define EXTRUDER_AUTO_FAN_TEMPERATURE 50
+#define EXTRUDER_AUTO_FAN_TEMPERATURE 0
 #define EXTRUDER_AUTO_FAN_SPEED 255   // 255 == full speed
 #define CHAMBER_AUTO_FAN_TEMPERATURE 30
 #define CHAMBER_AUTO_FAN_SPEED 255
@@ -1972,7 +1972,7 @@
    *
    * [1] On AVR an interrupt-capable pin is best for UHS3 compatibility.
    */
-  //#define USB_FLASH_DRIVE_SUPPORT
+  #define USB_FLASH_DRIVE_SUPPORT
   #if ENABLED(USB_FLASH_DRIVE_SUPPORT)
     /**
      * USB Host Shield Library
@@ -1992,7 +1992,7 @@
     /**
      * Native USB Host supported by some boards (USB OTG)
      */
-    //#define USE_OTG_USB_HOST
+    #define USE_OTG_USB_HOST
 
     #if DISABLED(USE_OTG_USB_HOST)
       #define USB_CS_PIN    SD_SS_PIN
@@ -2053,7 +2053,7 @@
    * Multiple volume support - EXPERIMENTAL.
    * Adds 'M21 Pm' / 'M21 S' / 'M21 U' to mount SD Card / USB Drive.
    */
-  //#define MULTI_VOLUME
+  #define MULTI_VOLUME
   #if ENABLED(MULTI_VOLUME)
     #define VOLUME_SD_ONBOARD
     #define VOLUME_USB_FLASH_DRIVE
@@ -4811,12 +4811,12 @@
 //
 // M42 - Set pin states
 //
-//#define DIRECT_PIN_CONTROL
+#define DIRECT_PIN_CONTROL
 
 //
 // M43 - display pin status, toggle pins, watch pins, watch endstops & toggle LED, test servo probe
 //
-//#define PINS_DEBUGGING
+#define PINS_DEBUGGING
 
 //
 // M265 - I2C Scanner

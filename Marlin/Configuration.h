@@ -103,16 +103,16 @@
  * Currently Ethernet (-2) is only supported on Teensy 4.1 boards.
  * :[-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
  */
-//#define SERIAL_PORT_2 -1
-//#define BAUDRATE_2 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
+#define SERIAL_PORT_2 1
+#define BAUDRATE_2 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
 
 /**
  * Select a third serial port on the board to use for communication with the host.
  * Currently supported for AVR, DUE, SAMD51, LPC1768/9, STM32/STM32F1/HC32, and Teensy 4.x
  * :[-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
  */
-//#define SERIAL_PORT_3 1
-//#define BAUDRATE_3 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
+#define SERIAL_PORT_3 2
+#define BAUDRATE_3 250000   // :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000] Enable to override BAUDRATE
 
 /**
  * Select a serial port to communicate with RS485 protocol
@@ -581,14 +581,14 @@
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
 #define TEMP_SENSOR_0 1
-#define TEMP_SENSOR_1 0
+#define TEMP_SENSOR_1 1
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
 #define TEMP_SENSOR_5 0
 #define TEMP_SENSOR_6 0
 #define TEMP_SENSOR_7 0
-#define TEMP_SENSOR_BED 1
+#define TEMP_SENSOR_BED 998
 #define TEMP_SENSOR_PROBE 0
 #define TEMP_SENSOR_CHAMBER 0
 #define TEMP_SENSOR_COOLER 0
@@ -656,7 +656,7 @@
 
 // Below this temperature the heater will be switched off
 // because it probably indicates a broken thermistor wire.
-#define HEATER_0_MINTEMP   5
+#define HEATER_0_MINTEMP   0
 #define HEATER_1_MINTEMP   5
 #define HEATER_2_MINTEMP   5
 #define HEATER_3_MINTEMP   5
@@ -664,7 +664,7 @@
 #define HEATER_5_MINTEMP   5
 #define HEATER_6_MINTEMP   5
 #define HEATER_7_MINTEMP   5
-#define BED_MINTEMP        5
+#define BED_MINTEMP        0
 #define CHAMBER_MINTEMP    5
 
 // Above this temperature the heater will be switched off.
@@ -678,7 +678,7 @@
 #define HEATER_5_MAXTEMP 275
 #define HEATER_6_MAXTEMP 275
 #define HEATER_7_MAXTEMP 275
-#define BED_MAXTEMP      150
+#define BED_MAXTEMP      120
 #define CHAMBER_MAXTEMP  60
 
 /**
@@ -704,7 +704,7 @@
  * PIDTEMP : PID temperature control (~4.1K)
  * MPCTEMP : Predictive Model temperature control. (~1.8K without auto-tune)
  */
-#define PIDTEMP           // See the PID Tuning Guide at https://reprap.org/wiki/PID_Tuning
+//#define PIDTEMP           // See the PID Tuning Guide at https://reprap.org/wiki/PID_Tuning
 //#define MPCTEMP         // See https://marlinfw.org/docs/features/model_predictive_control.html
 
 #define PID_MAX  255      // Limit hotend current while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
@@ -830,7 +830,7 @@
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #else
-  //#define BED_LIMIT_SWITCHING   // Keep the bed temperature within BED_HYSTERESIS of the target
+  #define BED_LIMIT_SWITCHING   // Keep the bed temperature within BED_HYSTERESIS of the target
 #endif
 
 /**
@@ -3523,6 +3523,7 @@
 
   #define COMPACT_MARLIN_BOOT_LOGO  // Use compressed data to save Flash space
 #endif
+
 
 #if ENABLED(TFT_LVGL_UI)
   //#define MKS_WIFI_MODULE // MKS WiFi module
