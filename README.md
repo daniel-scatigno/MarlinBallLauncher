@@ -16,3 +16,4 @@
 
 https://github.com/makerbase-mks/MKS-WIFI
 https://github.com/vincios/Mks-Wifi?tab=readme-ov-file
+https://esp3d.io/ESP3D/Version_3.X/documentation/commands/
