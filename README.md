@@ -11,7 +11,7 @@
 
 ## Comandos Úteis
 - M115 traza versão do Firmware
-- M42 P69 S50 - Liga o Motor do Hotend 0 em S50 (S255 é o máximo)
+- M42 I1 P69 S50 - Liga o Motor do Hotend 0 em S50 (S255 é o máximo)
 
 
 https://github.com/makerbase-mks/MKS-WIFI
